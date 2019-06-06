@@ -1,0 +1,10 @@
+div.brand_name span{
+  font-size: 1.6rem;
+}
+
+div.nav-wrapper nav ul{
+  flex: 3;
+}
+div.nav-wrapper nav ul li a{
+  font-size: 0.8rem;
+}
