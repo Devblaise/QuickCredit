@@ -8,3 +8,7 @@ div.nav-wrapper nav ul{
 div.nav-wrapper nav ul li a{
   font-size: 0.8rem;
 }
+/* sign up form */
+form div.form_input{
+  display: block;
+}

@@ -12,7 +12,10 @@
 html,body{
   font-family: 'Roboto Condensed', sans-serif;
   line-height: 1.4;
-  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
 }
 .nav-wrapper{
   background-color:var(--main-bg-color);
@@ -55,14 +58,11 @@ nav .brand_name span{
   transition: all 0.5s ease-in-out;
 }
 .nav-wrapper nav ul li a:hover{
-  background-color: var(--trans-color);
-}
-.nav-wrapper nav ul li a:focus{
   background-color: var(--pri-bg-color);
   color: #fff;
 }
 .container{
-  height: calc(100vh - 136px);
+  flex: 1;
 }
 .container::before{
   content:'';
@@ -109,10 +109,7 @@ main .section a:hover{
   color: #fff;
 }
 footer{
-  display: flex;
-  flex-direction: column;
   text-align: center;
-  align-items: center;
   background-color:var(--main-bg-color);
   padding: 0.5rem;
   color: #fff;
@@ -122,3 +119,85 @@ footer p span{
   font-size: 1.5rem;
   color: var(--pri-bg-color)
 }
+
+/* Signup and login page */
+div.wrapper{
+  flex: 1;
+  margin: 0 auto;
+}
+div.wrapper section{
+  height: 100%;
+  padding: 3rem 0;
+}
+div.wrapper section form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  border: 1px solid lightgray;
+  border-radius: 0.4rem;
+  box-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.1)
+}
+div.wrapper section form > div h1{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+div.wrapper section form hr{
+  margin: 0 0.8rem;
+  height: 0.18rem;
+  background: #f4f4f4;
+}
+form div.signup_header,
+form div.signup_footer,
+form div.signin_header,
+form div.signin_footer
+{
+  margin: 0.8rem;
+}
+form div.form_signup{
+  display: flex;
+}
+form div.form_signup .left > div,
+form div.form_signup .right > div{
+  padding: 0.5rem;
+}
+form div.form_signup label,
+form div.form_signin label{
+  display: block;
+}
+form div.form_signin > div{
+  padding: 0.7rem;
+}
+form div.form_signup input,
+form div.form_signin input{
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  background: #f4f4f4;
+}
+div.form_signup label::after,
+div.form_signin label::after{
+  content: '*';
+  color: red;
+  padding-left: 2px;
+}
+.signup_footer span a,
+.signin_footer span a{
+  display: inline-block;
+  padding: 0.5rem;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  background-color: var(--pri-bg-color);
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+.signup_footer p,
+.signin_footer p{
+  margin:0.5rem 0;
+}
+
+
+
+
+
+
