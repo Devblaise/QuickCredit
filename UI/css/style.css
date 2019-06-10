@@ -38,28 +38,132 @@ nav .brand_name span{
   text-align: center;
   color: #fff
 }
-.nav-wrapper nav ul {
+.menu-wrap{
   flex: 1;
+  z-index: 1;
+  top: 0;
+  right: 0;
+}
+.menu-wrap .toggler{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0;
+}
+.menu-wrap .hamburger{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  background:rgba(3, 2, 34, 0.8);
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+}
+ /* Hamburger line */
+ .menu-wrap .hamburger > div{
+   position: relative;
+   flex: none ;
+   width: 100%;
+   height: 0.15rem;
+   background: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.4s ease;
+ }
+ /* hamburger top and bottom lines */
+ .menu-wrap .hamburger > div::before,
+ .menu-wrap .hamburger > div::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.15rem;
+  background: inherit;
+  z-index: 1;
+  top: -0.5rem
+ }
+ .menu-wrap .hamburger > div::after{
+  top: 0.5rem
+ }
+/* Toggler animation */
+.menu-wrap .toggler:checked + .hamburger > div{
+  transform: rotate(135deg)
+}
+.menu-wrap .toggler:checked + .hamburger > div::before,
+.menu-wrap .toggler:checked + .hamburger > div::after{
+  top:0;
+  transform: rotate(90deg)
+}
+/* rotate on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div{
+  transform: rotate(225deg);
+}
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+.menu-wrap .toggler:checked ~ .menu > div{
+  transform: scale(1);
+  transition-duration: 0.75s;
+}
+.menu-wrap .toggler:checked ~ .menu > div > div{
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
+.menu-wrap .menu{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height:100%;
+  visibility:hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.menu-wrap .menu > div{
+  background:rgba(7, 6, 43, 0.877);
+  width: 200vw;
+  height: 200vh;
+  border-radius: 50%;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.6s ease;
+}
+.menu-wrap .menu > div > div{
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.menu-wrap .menu > div > div > ul > li{
   list-style: none;
-}
-.nav-wrapper nav ul li{
-  text-transform: uppercase;
-  margin: 0.3rem;
-}
-.nav-wrapper nav ul li a{
-  padding: 0.5rem;
-  text-decoration: none;
-  border-radius: 0.2rem;
-  background-color: #fff;
-  color: var(--main-bg-color);
-  transition: all 0.5s ease-in-out;
-}
-.nav-wrapper nav ul li a:hover{
-  background-color: var(--pri-bg-color);
   color: #fff;
+  font-size: 1.8rem;
+  padding: 1rem;
+  text-transform: uppercase
+}
+.menu-wrap .menu > div > div > ul > li > a{
+  color:inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+.menu-wrap .menu > div > div > ul > li > a:hover{
+  color: var(--pri-bg-color)
 }
 .container{
   flex: 1;
@@ -126,7 +230,6 @@ div.wrapper{
   margin: 0 auto;
 }
 div.wrapper section{
-  height: 100%;
   padding: 3rem 0;
 }
 div.wrapper section form{
