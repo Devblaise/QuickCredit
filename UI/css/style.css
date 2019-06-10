@@ -173,7 +173,7 @@ form div.form_signin input{
   width: 100%;
   padding: 1rem;
   border: none;
-  background: #f4f4f4;
+  background:rgb(226, 226, 226);
 }
 div.form_signup label::after,
 div.form_signin label::after{
