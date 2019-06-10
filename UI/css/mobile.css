@@ -9,6 +9,6 @@ div.nav-wrapper nav ul li a{
   font-size: 0.8rem;
 }
 /* sign up form */
-form div.form_input{
+.wrapper form div.form_signup{
   display: block;
 }
