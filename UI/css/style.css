@@ -132,7 +132,7 @@ nav .brand_name span{
   justify-content: center
 }
 .menu-wrap .menu > div{
-  background:rgba(7, 6, 43, 0.877);
+  background:rgba(0, 0, 10, 0.95);
   width: 200vw;
   height: 200vh;
   border-radius: 50%;
