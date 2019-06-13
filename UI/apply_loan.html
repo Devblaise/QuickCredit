@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
     <link rel="stylesheet" media="screen and (max-width:768px)" href="css/mobile.css">
     <link rel="stylesheet" media="screen and (min-width:1100px)" href="css/widescreen.css">
-    <title>Signin | QuickCredit</title>
+    <title>Loan Application | QuickCredit</title>
 </head>
 <body>
     <div class="nav-wrapper">
@@ -22,9 +22,11 @@
             <div>
               <div>
                 <ul>
-                  <li><a href="./index.html">Home</a></li>
-                  <li><a href="./signin.html">Sign in</a></li>
-                  <li><a href="./signup.html">Sign up</a></li>
+                  <li><a href="./dashboard.html">Dashboard</a></li>
+                  <li><a href="./apply_loan.html">Apply</a></li>
+                  <li><a href="./loans.html">Loans</a></li>
+                  <li><a href="./profile.html">Profile</a></li>
+                  <li><a href="./signin.html">Logout</a></li>
                 </ul>
               </div>
             </div>
@@ -32,32 +34,31 @@
         </div>
         </nav>
       </div>
-    <div class="wrapper">
-      <section>
-        <form>
-          <div class="signin_header">
-            <h1>Sign In</h1>
-            <p>Sign into your account</p>
-          </div>
-          <hr>
-          <div class="form_signin">
-              <div>
-                <label for="Email">Email</label>
-                <input type="text" name="Email" id="Email" placeholder="Enter Email address" required>
+      <div class="wrapper">
+          <section>
+            <form>
+              <div class="loan_application_header">
+                <h1>Loan Application</h1>
+                <p>Apply for loan now</p>
               </div>
-              <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Enter password" required>
+              <hr>
+              <div class="form_signin">
+                  <div>
+                    <label for="Tenor">Tenor</label>
+                    <input type="text" name="Tenor" id="Tenor" placeholder="Enter Tenor" required>
+                  </div>
+                  <div>
+                    <label for="Amount">Amount</label>
+                    <input type="Amount" name="Amount" id="Amount" placeholder="Enter Amount" required>
+                  </div>
               </div>
-          </div>
-          <hr>
-          <div class="signin_footer">
-            <span><a href="./dashboard.html">Sign in</a></span>
-            <p>Don't have an account yet?<a href="./signup.html"> Sign up</a> for free</p>
-          </div>
-        </form> 
-      </section>
-    </div>
+              <hr>
+              <div class="loan_application_footer">
+                <span><a href="#">Submit</a></span>
+              </div>
+            </form> 
+          </section>
+        </div>
     <footer>
       <p>Developed with <span>&#9829</span> by Devblaise Andela Cycle 44</p>
       <p>&copy; 2019 QuickCredit</p>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="images/QuickCredit.png">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
+    <link rel="stylesheet" media="screen and (max-width:835px)" href="css/mobile.css">
+    <link rel="stylesheet" media="screen and (min-width:1100px)" href="css/widescreen.css">
+    <title>Loan History | QuickCredit</title>
+</head>
+<body>
+    <div class="nav-wrapper">
+      <nav>
+        <div class="brand_name"><span><img src="images/QuickCredit.png" alt="image-logo"></span><span>uickCredit</span></div>
+        <div class="menu-wrap">
+          <input type="checkbox" class="toggler">
+          <div class="hamburger"><div></div></div>
+          <div class="menu">
+            <div>
+              <div>
+                <ul>
+                  <li><a href="./dashboard.html">Dashboard</a></li>
+                  <li><a href="./apply_loan.html">Apply</a></li>
+                  <li><a href="./loans.html">Loans</a></li>
+                  <li><a href="./profile.html">Profile</a></li>
+                  <li><a href="./signin.html">Logout</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        </nav>
+      </div>
+    <div class="wrapper">
+      <section>
+        <div class="loan_history">
+          <div>
+            <h2>My Loans</h2>
+            <p>All Loans have interest of 5%</p>
+          </div>
+          <table id="table_Id">
+            <thead>
+              <tr>
+                <th>S/N</th>
+                <th>Amount(₦)</th>
+                <th>Tenor(Months)</th>
+                <th>Installment(₦)</th>
+                <th>Balance(₦)</th>
+                <th>Interest(₦)</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Repaid</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr onclick="openModal()">
+                <td data-column="S/N" >1</td>
+                <td data-column="Amount(₦)">50,000</td>
+                <td data-column="Tenor(Months)">2</td>
+                <td data-column="Installment(₦)">26,250</td>
+                <td data-column="Balance(₦)">52,500</td>
+                <td data-column="Interest(₦)">2,500</td>
+                <td data-column="Date">09/04/2019</td>
+                <td data-column="Status">Pending</td>
+                <td data-column="Repaid">No</td>
+              </tr>
+              <tr onclick="openModal()">
+                  <td data-column="S/N" >2</td>
+                  <td data-column="Amount(₦)">350,000</td>
+                  <td data-column="Tenor(Months)">3</td>
+                  <td data-column="Installment(₦)">122,500</td>
+                  <td data-column="Balance(₦)">0</td>
+                  <td data-column="Interest(₦)">17,500</td>
+                  <td data-column="Date">09/12/2018</td>
+                  <td data-column="Status">Approved</td>
+                  <td data-column="Repaid">Yes</td>
+              </tr>
+              <tr onclick="openModal()">
+                  <td data-column="S/N" >3</td>
+                  <td data-column="Amount(₦)">150,000</td>
+                  <td data-column="Tenor(Months)">4</td>
+                  <td data-column="Installment(₦)">39,375</td>
+                  <td data-column="Balance(₦)">0</td>
+                  <td data-column="Interest(₦)">7,500</td>
+                  <td data-column="Date">20/10/2018</td>
+                  <td data-column="Status">Approved</td>
+                  <td data-column="Repaid">Yes</td>
+              </tr>
+              <tr onclick="openModal()">
+                  <td data-column="S/N" >4</td>
+                  <td data-column="Amount(₦)">1,000,000</td>
+                  <td data-column="Tenor(Months)">10</td>
+                  <td data-column="Installment(₦)">105,000</td>
+                  <td data-column="Balance(₦)">1,050,000</td>
+                  <td data-column="Interest(₦)">50,000</td>
+                  <td data-column="Date">05/10/2018</td>
+                  <td data-column="Status">Rejected</td>
+                  <td data-column="Repaid">No</td>
+              </tr>
+              <tr onclick="openModal()">
+                  <td data-column="S/N" >5</td>
+                  <td data-column="Amount(₦)">100,000</td>
+                  <td data-column="Tenor(Months)">6</td>
+                  <td data-column="Installment(₦)">17,500</td>
+                  <td data-column="Balance(₦)">0</td>
+                  <td data-column="Interest(₦)">5,000</td>
+                  <td data-column="Date">20/06/2017</td>
+                  <td data-column="Status">Approved</td>
+                  <td data-column="Repaid">Yes</td>
+              </tr>
+              <tr onclick="openModal()">
+                  <td data-column="S/N" >6</td>
+                  <td data-column="Amount(₦)">50,000</td>
+                  <td data-column="Tenor(Months)">4</td>
+                  <td data-column="Installment(₦)">13,125</td>
+                  <td data-column="Balance(₦)">0</td>
+                  <td data-column="Interest(₦)">2,500</td>
+                  <td data-column="Date">03/02/2018</td>
+                  <td data-column="Status">Approved</td>
+                  <td data-column="Repaid">Yes</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pagination">
+          <a href="#">&laquo;</a>
+          <a href="#" class="active">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#">4</a>
+          <a href="#">5</a>
+          <a href="#">6</a>
+          <a href="#">&raquo;</a>
+        </div>
+        <div class="modal">
+            <div class="modal_content">
+              <div class="modal_header">
+                <h2>Loan Repayment History</h2>
+                <span class="closeBtn">&times;</span>
+              </div>
+              <div class="modal_body">
+                <div class="card_content_first">
+                  <p><span>Fullname:</span><span>Dev Blaise</span></p>
+                  <p><span>Address:</span><span>30, UpperDrive palmgrove Lagos</span></p>
+                  <p><span>Email:</span><span>devblaise@gmail.com</span></p>
+                  <p><span>Date:</span><span>18/04/2019</span></p>
+                  <p><span>Amount Paid:</span><span>₦170,000</span></p>
+                  <p><span>Balance</span><span>₦35,000</span></p>
+                </div>
+                <div class="card_content_rest">
+                  <h3>Previous Payments</h3>
+                  <hr>
+                  <p><span>Date:</span><span>16/04/2018</span></p>
+                  <p><span>Amount Paid:</span><span>₦15,000</span></p>
+                  <hr>
+                  <p><span>Date:</span><span>12/05/2018</span></p>
+                  <p><span>Amount Paid:</span><span>₦45,000</span></p>
+                  <hr>
+                  <p><span>Date:</span><span>10/07/2018</span></p>
+                  <p><span>Amount Paid:</span><span>₦75,000</span></p>
+                </div>
+              </div>
+              <div class="modal_footer"> </div>
+      </section>
+    </div>
+    <footer>
+      <p>Developed with <span>&#9829</span> by Devblaise Andela Cycle 44</p>
+      <p>&copy; 2019 QuickCredit</p>
+    </footer>
+    <script src="./js/index.js"></script>
+</body>
+</html>

@@ -237,6 +237,7 @@ div.wrapper section form{
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  padding: 0.8rem;
   border: 1px solid lightgray;
   border-radius: 0.4rem;
   box-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.1)
@@ -253,7 +254,9 @@ div.wrapper section form hr{
 form div.signup_header,
 form div.signup_footer,
 form div.signin_header,
-form div.signin_footer
+form div.signin_footer,
+form div.loan_application_header,
+form div.loan_application_footer
 {
   margin: 0.8rem;
 }
@@ -285,8 +288,12 @@ div.form_signin label::after{
   padding-left: 2px;
 }
 .signup_footer span a,
-.signin_footer span a{
-  display: inline-block;
+.signin_footer span a,
+.loan_application_footer span a{
+  width: 35%;
+  text-align: center;
+  margin: 0.2rem 0;
+  display: block;
   padding: 0.5rem;
   text-decoration: none;
   border-radius: 0.2rem;
@@ -298,9 +305,203 @@ div.form_signin label::after{
 .signin_footer p{
   margin:0.5rem 0;
 }
-
-
-
-
-
-
+/* Client dashboard */
+.wrapper .dashboard{
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper .dashboard a{
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(1, 1, 19, 0.65);
+  text-decoration: none;
+  transition: 0.4s;
+  width: 40%;
+  display: inline-block;
+  background: var(--main-bg-color);
+  color: #fff;
+  margin: 1rem;
+  padding: 1.5rem;
+}
+.wrapper .dashboard a:hover{
+  background: var(--pri-bg-color);
+  color: #fff;
+}
+/* loan History */ 
+.loan_history > div{
+  text-align: center;
+}
+.loan_history > div h2{
+  font-size: 2.5rem
+}
+.loan_history table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem auto;
+}
+.loan_history tr{
+  cursor: pointer;
+}
+.loan_history tr:nth-of-type(even) {
+  background: #eee;
+}
+.loan_history tr:hover{
+  background: var(--trans-color);
+}
+.loan_history th {
+  background: var(--pri-bg-color);
+  color: #fff;
+  font-weight: bold;
+}
+.loan_history td,
+.loan_history th {
+  padding: 0.7rem;
+  border: 0.1rem solid #ccc;
+  text-align: center;
+}
+.pagination{
+  text-align: center;
+  margin: 1rem auto;
+}
+.pagination a{
+  color: #000;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: background-color 1s;
+}
+ .pagination a.active {
+  background-color: var(--main-bg-color);
+  color: #fff;
+}
+.pagination a:hover{
+  background-color: var(--pri-bg-color);
+}
+/* Repayment History */
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.5)
+}
+.modal_content{
+  background: #f4f4f4;
+  margin: 9rem auto;
+  width: 35%;
+  box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2),0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+.modal_content .modal_header{
+  background:var(--pri-bg-color);
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+.modal_content .modal_header h2{
+  color: #fff;
+  text-align: center;
+  flex: 1;
+}
+.closeBtn{
+  color: #07062B;
+  font-size: 1.8rem;
+}
+.closeBtn:hover,
+.closeBtn:hover:focus{
+  color: #FFE0B5;
+  text-decoration: none;
+  cursor: pointer;
+} 
+@keyframes modalopen{
+  from{opacity: 0}
+  to{opacity: 1}
+}
+.modal_body{
+  background:  #ccc;
+}
+.modal_body .card_content_first{
+ padding: 1rem;
+}
+.modal_body .card_content_rest{
+  padding: 1rem;
+}
+.modal_body hr{
+ height: 0.2rem;
+ margin: 0.1rem 0.2rem;
+}
+.modal_body .card_content_first p{
+  display: flex;
+  padding: 0.1rem 0.2rem;
+  align-items: center;
+}
+.modal_body .card_content_first p span,
+.modal_body .card_content_rest p span{
+  flex: 1;
+}
+.modal_body .card_content_rest h3{
+  text-align: center;
+  margin:0.2rem 0;
+}
+.modal_body .card_content_rest p{
+  display: flex;
+  align-items: center;
+  margin:0.2rem 0;
+}
+.modal_footer{
+  height:0.2rem;
+  background: var(--pri-bg-color)
+}
+/* user profile */
+.wrapper .profile_card{
+  text-align: center;
+  border: 1px solid lightgrey;
+  box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2),0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+.wrapper .profile_card h2{
+  padding: 0.6rem;
+  background: var(--pri-bg-color);
+  color: #fff;
+}
+.profile_card .profile_img{
+  padding: 1.2rem;
+}
+.profile_card .profile_img img{
+  width: 150px;
+}
+.profile_card .profile_details{
+  margin: 1rem;
+}
+.profile_card .profile_details p{
+  display: flex;
+  padding: 0.5rem;
+}
+.profile_details p span:nth-of-type(even){
+  flex: 1;
+  margin-left:0.5rem;
+}
+.profile_details a{
+  margin: 0.6rem 2rem;
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  background-color: var(--pri-bg-color);
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.profile_details hr{
+  height: 0.2rem;
+}
+.profile_details a:hover{
+  opacity: 0.8;
+}
+.profile_card .profile_footer{
+  height: 0.1rem;
+  background: var(--pri-bg-color);
+}

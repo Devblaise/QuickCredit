@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/style.css"/>
     <link rel="stylesheet" media="screen and (max-width:768px)" href="css/mobile.css">
     <link rel="stylesheet" media="screen and (min-width:1100px)" href="css/widescreen.css">
-    <title>Signin | QuickCredit</title>
+    <title>Dashboard | QuickCredit</title>
 </head>
 <body>
     <div class="nav-wrapper">
@@ -22,9 +22,11 @@
             <div>
               <div>
                 <ul>
-                  <li><a href="./index.html">Home</a></li>
-                  <li><a href="./signin.html">Sign in</a></li>
-                  <li><a href="./signup.html">Sign up</a></li>
+                  <li><a href="./dashboard.html">Dashboard</a></li>
+                  <li><a href="./apply_loan.html">Apply</a></li>
+                  <li><a href="./loans.html">Loans</a></li>
+                  <li><a href="./profile.html">Profile</a></li>
+                  <li><a href="./signin.html">Logout</a></li>
                 </ul>
               </div>
             </div>
@@ -34,28 +36,26 @@
       </div>
     <div class="wrapper">
       <section>
-        <form>
-          <div class="signin_header">
-            <h1>Sign In</h1>
-            <p>Sign into your account</p>
-          </div>
-          <hr>
-          <div class="form_signin">
-              <div>
-                <label for="Email">Email</label>
-                <input type="text" name="Email" id="Email" placeholder="Enter Email address" required>
-              </div>
-              <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="Enter password" required>
-              </div>
-          </div>
-          <hr>
-          <div class="signin_footer">
-            <span><a href="./dashboard.html">Sign in</a></span>
-            <p>Don't have an account yet?<a href="./signup.html"> Sign up</a> for free</p>
-          </div>
-        </form> 
+        <div class="dashboard">
+          <a href="./apply_loan.html">
+            <div>
+              <h2>Apply for Loan</h2>
+              <p>Loan Application</p>
+            </div>
+          </a>
+          <a href="./loans.html">
+            <div>
+              <h2>View Loans</h2>
+              <p>Loan Repayments</p>
+            </div>
+          </a>
+          <a href="./profile.html">
+            <div>
+              <h2>Profile</h2>
+              <p>User Details</p>
+            </div>
+          </a>
+        </div>
       </section>
     </div>
     <footer>
