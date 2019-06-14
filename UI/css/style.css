@@ -15,7 +15,6 @@ html,body{
   display: flex;
   flex-direction: column;
   height: 100vh;
-
 }
 .nav-wrapper{
   background-color:var(--main-bg-color);
@@ -24,11 +23,16 @@ html,body{
 nav{
   display: flex;
 }
-nav .brand_name{
+nav .brand_name, 
+nav .brand_name a{
   flex: 1;
   display: flex;
   text-align: center;
   align-items: center;
+}
+nav .brand_name a{
+  flex: none;
+  text-decoration: none;
 }
 nav .brand_name span img{
   width: 3rem;
@@ -36,7 +40,8 @@ nav .brand_name span img{
 nav .brand_name span{
   font-size: 2rem;
   text-align: center;
-  color: #fff
+  color: #fff;
+  flex: 1;
 }
 .menu-wrap{
   flex: 1;
