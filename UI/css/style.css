@@ -1,0 +1,512 @@
+:root{
+  --main-bg-color:#07062B;
+  --pri-bg-color: rgb(222, 4, 77);
+  --sec-bg-color : #F7AF9D;
+  --trans-color: #FFE0B5;
+}
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box
+}
+html,body{
+  font-family: 'Roboto Condensed', sans-serif;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+.nav-wrapper{
+  background-color:var(--main-bg-color);
+  padding: 0.5rem;
+}
+nav{
+  display: flex;
+}
+nav .brand_name, 
+nav .brand_name a{
+  flex: 1;
+  display: flex;
+  text-align: center;
+  align-items: center;
+}
+nav .brand_name a{
+  flex: none;
+  text-decoration: none;
+}
+nav .brand_name span img{
+  width: 3rem;
+}
+nav .brand_name span{
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+  flex: 1;
+}
+.menu-wrap{
+  flex: 1;
+  z-index: 1;
+  top: 0;
+  right: 0;
+}
+.menu-wrap .toggler{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0;
+}
+.menu-wrap .hamburger{
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  background:rgba(3, 2, 34, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ /* Hamburger line */
+ .menu-wrap .hamburger > div{
+   position: relative;
+   flex: none ;
+   width: 100%;
+   height: 0.15rem;
+   background: #fff;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: all 0.4s ease;
+ }
+ /* hamburger top and bottom lines */
+ .menu-wrap .hamburger > div::before,
+ .menu-wrap .hamburger > div::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.15rem;
+  background: inherit;
+  z-index: 1;
+  top: -0.5rem
+ }
+ .menu-wrap .hamburger > div::after{
+  top: 0.5rem
+ }
+/* Toggler animation */
+.menu-wrap .toggler:checked + .hamburger > div{
+  transform: rotate(135deg)
+}
+.menu-wrap .toggler:checked + .hamburger > div::before,
+.menu-wrap .toggler:checked + .hamburger > div::after{
+  top:0;
+  transform: rotate(90deg)
+}
+/* rotate on hover when checked */
+.menu-wrap .toggler:checked:hover + .hamburger > div{
+  transform: rotate(225deg);
+}
+/* Show Menu */
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+.menu-wrap .toggler:checked ~ .menu > div{
+  transform: scale(1);
+  transition-duration: 0.75s;
+}
+.menu-wrap .toggler:checked ~ .menu > div > div{
+  opacity: 1;
+  transition: opacity 0.4s ease 0.4s;
+}
+.menu-wrap .menu{
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height:100%;
+  visibility:hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.menu-wrap .menu > div{
+  background:rgba(0, 0, 10, 0.95);
+  width: 200vw;
+  height: 200vh;
+  border-radius: 50%;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  transition: all 0.6s ease;
+}
+.menu-wrap .menu > div > div{
+  text-align: center;
+  max-width: 90vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.menu-wrap .menu > div > div > ul > li{
+  list-style: none;
+  color: #fff;
+  font-size: 1.8rem;
+  padding: 1rem;
+  text-transform: uppercase
+}
+.menu-wrap .menu > div > div > ul > li > a{
+  color:inherit;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
+.menu-wrap .menu > div > div > ul > li > a:hover{
+  color: var(--pri-bg-color)
+}
+.container{
+  flex: 1;
+}
+.container::before{
+  content:'';
+  background: url(../images/discussion-indoors-laptops-1367276.jpg)
+  no-repeat center center/cover;
+  opacity:0.5; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.container main{
+  height: 100%
+}
+.container main .section{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  color: var(--main-bg-color)
+}
+main .section h1{
+  font-size: 3rem
+}
+main .section p{
+  font-size: 1.4rem;
+  margin-bottom: 1rem
+}
+main .section a{
+  display:inline-block;
+  padding: 0.8rem;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  background-color: var(--main-bg-color);
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+main .section a:hover{
+  background-color: var(--pri-bg-color);
+  color: #fff;
+}
+footer{
+  text-align: center;
+  background-color:var(--main-bg-color);
+  padding: 0.5rem;
+  color: #fff;
+  font-size: 1.2rem
+}
+footer p span{
+  font-size: 1.5rem;
+  color: var(--pri-bg-color)
+}
+
+/* Signup and login page */
+div.wrapper{
+  flex: 1;
+  margin: 0 auto;
+}
+div.wrapper section{
+  padding: 3rem 0;
+}
+div.wrapper section form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 0.8rem;
+  border: 1px solid lightgray;
+  border-radius: 0.4rem;
+  box-shadow: 0.2rem 0.2rem rgba(0, 0, 0, 0.1)
+}
+div.wrapper section form > div h1{
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+div.wrapper section form hr{
+  margin: 0 0.8rem;
+  height: 0.18rem;
+  background: #f4f4f4;
+}
+form div.signup_header,
+form div.signup_footer,
+form div.signin_header,
+form div.signin_footer,
+form div.loan_application_header,
+form div.loan_application_footer
+{
+  margin: 0.8rem;
+}
+form div.form_signup{
+  display: flex;
+}
+form div.form_signup .left > div,
+form div.form_signup .right > div{
+  padding: 0.5rem;
+}
+form div.form_signup label,
+form div.form_signin label{
+  display: block;
+}
+form div.form_signin > div{
+  padding: 0.7rem;
+}
+form div.form_signup input,
+form div.form_signin input{
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  background:rgb(226, 226, 226);
+}
+div.form_signup label::after,
+div.form_signin label::after{
+  content: '*';
+  color: red;
+  padding-left: 2px;
+}
+.signup_footer span a,
+.signin_footer span a,
+.loan_application_footer span a{
+  width: 35%;
+  text-align: center;
+  margin: 0.2rem 0;
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  background-color: var(--pri-bg-color);
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+.signup_footer p,
+.signin_footer p{
+  margin:0.5rem 0;
+}
+/* Client dashboard */
+.wrapper .dashboard{
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper .dashboard a{
+  box-shadow: 0 0.25rem 0.5rem 0 rgba(1, 1, 19, 0.65);
+  text-decoration: none;
+  transition: 0.4s;
+  width: 40%;
+  display: inline-block;
+  background: var(--main-bg-color);
+  color: #fff;
+  margin: 1rem;
+  padding: 1.5rem;
+}
+.wrapper .dashboard a:hover{
+  background: var(--pri-bg-color);
+  color: #fff;
+}
+/* loan History */ 
+.loan_history > div{
+  text-align: center;
+}
+.loan_history > div h2{
+  font-size: 2.5rem
+}
+.loan_history table{
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem auto;
+}
+.loan_history tr{
+  cursor: pointer;
+}
+.loan_history tr:nth-of-type(even) {
+  background: #eee;
+}
+.loan_history tr:hover{
+  background: var(--trans-color);
+}
+.loan_history th {
+  background: var(--pri-bg-color);
+  color: #fff;
+  font-weight: bold;
+}
+.loan_history td,
+.loan_history th {
+  padding: 0.7rem;
+  border: 0.1rem solid #ccc;
+  text-align: center;
+}
+.pagination{
+  text-align: center;
+  margin: 1rem auto;
+}
+.pagination a{
+  color: #000;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  transition: background-color 1s;
+}
+ .pagination a.active {
+  background-color: var(--main-bg-color);
+  color: #fff;
+}
+.pagination a:hover{
+  background-color: var(--pri-bg-color);
+}
+/* Repayment History */
+.modal{
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left:0;
+  top:0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: rgba(0,0,0,0.5)
+}
+.modal_content{
+  background: #f4f4f4;
+  margin: 9rem auto;
+  width: 35%;
+  box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2),0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+.modal_content .modal_header{
+  background:var(--pri-bg-color);
+  padding: 0.8rem;
+  display: flex;
+  align-items: center;
+}
+.modal_content .modal_header h2{
+  color: #fff;
+  text-align: center;
+  flex: 1;
+}
+.closeBtn{
+  color: #07062B;
+  font-size: 1.8rem;
+}
+.closeBtn:hover,
+.closeBtn:hover:focus{
+  color: #FFE0B5;
+  text-decoration: none;
+  cursor: pointer;
+} 
+@keyframes modalopen{
+  from{opacity: 0}
+  to{opacity: 1}
+}
+.modal_body{
+  background:  #ccc;
+}
+.modal_body .card_content_first{
+ padding: 1rem;
+}
+.modal_body .card_content_rest{
+  padding: 1rem;
+}
+.modal_body hr{
+ height: 0.2rem;
+ margin: 0.1rem 0.2rem;
+}
+.modal_body .card_content_first p{
+  display: flex;
+  padding: 0.1rem 0.2rem;
+  align-items: center;
+}
+.modal_body .card_content_first p span,
+.modal_body .card_content_rest p span{
+  flex: 1;
+}
+.modal_body .card_content_rest h3{
+  text-align: center;
+  margin:0.2rem 0;
+}
+.modal_body .card_content_rest p{
+  display: flex;
+  align-items: center;
+  margin:0.2rem 0;
+}
+.modal_footer{
+  height:0.2rem;
+  background: var(--pri-bg-color)
+}
+/* user profile */
+.wrapper .profile_card{
+  text-align: center;
+  border: 1px solid lightgrey;
+  box-shadow: 0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2),0 0.4rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+.wrapper .profile_card h2{
+  padding: 0.6rem;
+  background: var(--pri-bg-color);
+  color: #fff;
+}
+.profile_card .profile_img{
+  padding: 1.2rem;
+}
+.profile_card .profile_img img{
+  width: 150px;
+}
+.profile_card .profile_details{
+  margin: 1rem;
+}
+.profile_card .profile_details p{
+  display: flex;
+  padding: 0.5rem;
+}
+.profile_details p span:nth-of-type(even){
+  flex: 1;
+  margin-left:0.5rem;
+}
+.profile_details a{
+  margin: 0.6rem 2rem;
+  display: block;
+  padding: 0.5rem;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  background-color: var(--pri-bg-color);
+  color: #fff;
+  transition: all 0.5s ease-in-out;
+}
+.profile_details hr{
+  height: 0.2rem;
+}
+.profile_details a:hover{
+  opacity: 0.8;
+}
+.profile_card .profile_footer{
+  height: 0.1rem;
+  background: var(--pri-bg-color);
+}
