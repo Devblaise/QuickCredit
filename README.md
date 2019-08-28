@@ -25,4 +25,4 @@ helps solve problems of financial inclusion as a way to alleviate poverty and em
 
 ## Project Pipeline
 - [Pivotal Tracker stories](https://www.pivotaltracker.com/n/projects/2350283)
-- [UI Templates](https://sirblaise.github.io/QuickCredit/UI)
+- [UI Templates](https://devblaise.github.io/QuickCredit/UI)
