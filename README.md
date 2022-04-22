@@ -23,6 +23,3 @@ helps solve problems of financial inclusion as a way to alleviate poverty and em
 1. User can reset password.
 2. Integrate real time email notification upon approval or rejection of a loan request.
 
-## Project Pipeline
-- [Pivotal Tracker stories](https://www.pivotaltracker.com/n/projects/2350283)
-- [UI Templates](https://devblaise.github.io/QuickCredit/UI)
